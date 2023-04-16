@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EventActivity"
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="@color/white"
+            android:onClick="goToHome"
+       />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToOutline="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rectangle_1_event"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:src="@drawable/grouplogo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/text_view_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:gravity="center_horizontal|top"
+
+                android:textSize="25dp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/barlowmedium"
+                android:text='SPORTS EVENT BOOKING'
+
+                />
+
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/text_view_event"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="-30dp"
+                android:textAppearance="@style/dropdown_op"
+                android:textSize="15dp"
+                android:fontFamily="@font/barlowmedium"
+                android:text='SELECT  THE  SPORTS'
+                />
+
+
+            <ScrollView
+                android:id="@+id/scrollable_"
+                android:layout_width="362dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="130dp"
+                android:layout_marginEnd="50dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/CRICKET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="CRICKET"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/FOOTBALL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="FOOTBALL"
+                        android:textStyle="bold"
+
+                        />
+
+                    <CheckBox
+                        android:id="@+id/BADMINTON"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="BADMINTON"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/CHESS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="CHESS"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/SWIMMING"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="SWIMMING"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/KABADDI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="KABADDI"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/KHO_KHO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="KHO-KHO"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/BASEBALL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/master_drop"
+                        android:text="BASEBALL"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </ScrollView>
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/scrollable_"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="-40dp"
+                android:textAppearance="@style/dropdown_op"
+                android:textSize="15dp"
+                android:fontFamily="@font/barlowmedium"
+                android:text="City Preferance"
+                />
+
+            <Spinner
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/text3"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="-70dp"
+                android:background="@drawable/dropdown_of"
+                android:backgroundTint="#FFFFFF"
+                android:gravity="center"
+                android:textColor="#FDFCFC"
+                />
+
+            <TextView
+                android:id="@+id/date_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:layout_alignBottom="@+id/autoCompleteTextView"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="-30dp"
+                android:textAppearance="@style/dropdown_op"
+                android:textSize="15dp"
+                android:fontFamily="@font/barlowmedium"/>
+            <EditText
+                android:id="@+id/event_date"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:hint="Enter Event Date"
+                android:inputType="date"
+                android:textColorHint="@color/white"
+                android:layout_alignBottom="@id/date_id"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="-60dp"
+                android:background="@drawable/dropdown_of"
+                />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_alignBottom="@+id/event_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="-70dp"
+                android:background="@drawable/submit"
+                android:textSize="18dp"
+                android:text="SUBMIT"
+                android:onClick="addEventFunction"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

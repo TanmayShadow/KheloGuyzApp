@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventBookActivity"
+    >
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:background="@color/white"
+        android:onClick="goToHome"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToOutline="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rectangle_1_event"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginTop="94dp"
+            android:layout_marginEnd="105dp"
+            android:src="@drawable/grouplogo" />
+
+        <TextView
+            android:id="@+id/text_view_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="177dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/barlowmedium"
+            android:gravity="center_horizontal|top"
+            android:text='EVENT MANAGEMENT'
+            android:textColor="#38BD20"
+
+            android:textSize="25dp" />
+        <TextView
+            android:id="@+id/text_view_event1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="220dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/barlowmedium"
+            android:gravity="center_horizontal|top"
+            android:text='TOSS TO TROPHY'
+            android:textColor="#FFFFFF"
+
+            android:textSize="25dp" />
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:src="@drawable/frame_233"
+                android:layout_marginTop="800dp"
+                android:layout_marginBottom="-300dp"
+                android:foregroundGravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:onClick="goToHome"
+                android:layout_alignBottom="@id/text_view_event1"
+                />
+
+    </RelativeLayout>
+</RelativeLayout>
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

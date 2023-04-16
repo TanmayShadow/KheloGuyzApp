@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Khelo Guys</string>
+    <string name="Fullname">Full Name</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="CPassword">Confirm Password</string>
+    <string name="Phone">Phone</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <string name="Back">back</string>
+    <string name="Search">Search</string>
+    <string name="Like">Like</string>
+    <string name="Home">Home</string>
+    <string name="History">History</string>
+    <string name="Account">Account</string>
+    <string name="Notification">Notification</string>
+    <string name="favourite">Favourite</string>
+    <string name="trending_sports">TRENDING SPORTS</string>
+    <string name="account">Account</string>
+    <string name="appname">App Name</string>
+    <string name="banner">BANNER</string>
+    <string name="ForgotPassword">Forgot Password</string>
+</resources>

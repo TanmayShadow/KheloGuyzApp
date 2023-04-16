@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GroundBookActivity">
+
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        >
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/Back"
+        android:foregroundGravity="left"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:onClick="goBackToSearch"/>
+        <FrameLayout
+            android:id="@+id/TopLayout"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/reactanglea"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_gravity="center"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rectanglea"
+            app:shapeAppearanceOverlay="@style/roundimageview"
+            />
+
+            <RelativeLayout
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="254dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gray_background"
+                >
+
+
+                <TextView
+                    android:id="@+id/stadium_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="23sp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Nehru Stadium"
+                    android:textAppearance="@style/nehru_stadi" />
+
+                <TextView
+                    android:id="@+id/stadium_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="15sp"
+                    android:linksClickable="true"
+                    android:textColor="#2246EF"
+                    android:text="Pimple Gurav, Pimpri-Chinchwad"
+                    android:textAppearance="@style/pimple_gura"
+                    />
+
+
+                <TextView
+                    android:id="@+id/stadium_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_alignParentTop="true"
+
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="100dp"
+                    android:textSize="17sp"
+                    android:gravity="top"
+                    android:text="Open: 6:00\nClose: 19:00"
+                    android:textAppearance="@style/open_6_00_c" />
+
+                <TextView
+                    android:id="@+id/stadium_price"
+                    android:layout_width="700dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="260dp"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginRight="30dp"
+                    android:textSize="17sp"
+                    android:gravity="top"
+                    android:text="1000/HOUR"
+                    android:textAppearance="@style/hour" />
+
+
+                <TextView
+                    android:id="@+id/contact_us_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="19sp"
+                    android:layout_alignParentTop="true"
+
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="145dp"
+                    android:gravity="top"
+                    android:text="Contact Us:"
+                    android:textAppearance="@style/contact_us_" />
+
+                <TextView
+                    android:id="@+id/stadium_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="17sp"
+                    android:layout_alignParentTop="true"
+
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="170dp"
+                    android:gravity="top"
+                    android:text="nehrustadium@gmail.com"
+                    android:textAppearance="@style/nehrustatdi" />
+
+
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/Book_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/TopLayout"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/booknow"
+            android:textColor="@color/white"
+            android:text="CAll To BOOK"
+            android:onClick="callToBook"
+            />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
