@@ -49,4 +49,10 @@ public class AccountActivity extends AppCompatActivity {
             startActivity(i);
             finish();
     }
+
+    public void goToEventPage(View view) {
+        Intent i = new Intent(this,EventActivity.class);
+        startActivity(i);
+        finish();
+    }
 }

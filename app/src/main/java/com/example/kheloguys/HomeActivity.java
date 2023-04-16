@@ -25,6 +25,14 @@ public class HomeActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridview);
         MyGridAdapter myGridAdapter = new MyGridAdapter(HomeActivity.this,gameName,images);
         gridView.setAdapter(myGridAdapter);
+        sharedPreferences = getSharedPreferences("AccountDetails",MODE_PRIVATE);
+//        check whether user is already logged in or not
+        if(!sharedPreferences.getString("logged","false").equals("true"))
+        {
+            Intent i = new Intent(getApplicationContext(),Login.class);
+            startActivity(i);
+            finish();
+        }
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

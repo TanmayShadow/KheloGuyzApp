@@ -32,7 +32,7 @@ public class EventActivity extends AppCompatActivity {
     String city,date,games;
     Spinner dynamicSpinner;
     CheckBox cricket,football,badminton,kabaddi,khokho,chess,swimming,baseball;
-
+    EditText dateEdit;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class EventActivity extends AppCompatActivity {
         chess = (CheckBox)findViewById(R.id.CHESS);
         swimming = (CheckBox)findViewById(R.id.SWIMMING);
         baseball = (CheckBox)findViewById(R.id.BASEBALL);
+        dateEdit = (EditText)findViewById(R.id.event_date);
 
         Spinner s = (Spinner) findViewById(R.id.autoCompleteTextView);
         dynamicSpinner = (Spinner) findViewById(R.id.autoCompleteTextView);
@@ -72,44 +73,30 @@ public class EventActivity extends AppCompatActivity {
         String name = sharedPreferences.getString("name","NULL");
         String email = sharedPreferences.getString("email","NULL");
         String phone = sharedPreferences.getString("phone","NULL");
-        games="sbc";
+        games="";
         city= dynamicSpinner.getSelectedItem().toString();
-        date=((EditText)findViewById(R.id.event_date)).toString();
-//        if(cricket.isSelected())
-//            games=games+"cricket ";
-//        if(football.isSelected())
-//            games=games+"football ";
-//        if(badminton.isSelected())
-//            games=games+"badminton ";
-//        if(kabaddi.isSelected())
-//            games=games+"kabaddi ";
-//        if(khokho.isSelected())
-//            games=games+"khokho ";
-//        if(chess.isSelected())
-//            games=games+"chess ";
-//        if(swimming.isSelected())
-//            games=games+"swimming ";
-//        if(baseball.isSelected())
-//            games=games+"baseball ";
+        date=dateEdit.getText().toString();
+        if(cricket.isChecked())
+            games=games+"cricket ";
+        if(football.isChecked())
+            games=games+"football ";
+        if(badminton.isChecked())
+            games=games+"badminton ";
+        if(kabaddi.isChecked())
+            games=games+"kabaddi ";
+        if(khokho.isChecked())
+            games=games+"khokho ";
+        if(chess.isChecked())
+            games=games+"chess ";
+        if(swimming.isChecked())
+            games=games+"swimming ";
+        if(baseball.isChecked())
+            games=games+"baseball ";
+
         if(!games.equals("") && !date.equals("")) {
-           try {
-               Intent i = new Intent(getApplicationContext(),EventBookActivity.class);
-               startActivity(i);
-               finish();
-//               insertDataToCloud(name, email, phone, games, date, city);
-           }
-           catch (Exception e)
-           {
-               Log.d("Server_Error_500",e.getLocalizedMessage());
-               Intent i = new Intent(getApplicationContext(),EventBookActivity.class);
-               startActivity(i);
-               finish();
-           }
-//            Intent i = new Intent(getApplicationContext(), EventBookActivity.class);
-//            startActivity(i);
-//            finish();
+            insertDataToCloud(name,email,phone,games,date,city);
         }
-//        insertDataToCloud(name,email,phone,games,date,city);
+
         else
             ((EditText)findViewById(R.id.event_date)).setError("Fill all the fields");
     }
@@ -128,7 +115,6 @@ public class EventActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             String status = jsonResponse.getString("success");
                             String msg = jsonResponse.getString("register");
-                            Toast.makeText(getApplicationContext(),"Registration "+msg,Toast.LENGTH_LONG).show();
 
 //                            After successful registration user will be redirected to login page
                             Intent i = new Intent(getApplicationContext(),EventBookActivity.class);

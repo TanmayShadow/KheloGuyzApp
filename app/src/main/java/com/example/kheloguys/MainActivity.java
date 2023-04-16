@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,Login.class);
         intent.putExtra("From","Main Page");
         startActivity(intent);
-        finish();
+//        finish();
     }
 
     public void sendToHome()

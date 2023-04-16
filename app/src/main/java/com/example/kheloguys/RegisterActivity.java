@@ -116,6 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void sendToLogin(View view) {
         Intent i = new Intent(RegisterActivity.this,Login.class);
         startActivity(i);
+        finish();
     }
 
     public void registerFunction(View view) {
