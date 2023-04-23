@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,11 +35,17 @@ public class GroundAdapter extends ArrayAdapter<Ground> {
         TextView textView = convertView.findViewById(R.id.GroundName);
         TextView textView1 = convertView.findViewById(R.id.Status);
         TextView textView2 = convertView.findViewById(R.id.price);
+        ImageView imageView = convertView.findViewById(R.id.action_image);
 
         circleImageView.setImageResource(getItem(position).getImage());
         textView.setText(getItem(position).getName());
         textView1.setText(getItem(position).getStatus());
         textView2.setText(getItem(position).getPrice());
+
+            ImageLoadTask ilt = new ImageLoadTask(getItem(position).getImageUrl(), imageView);
+            ilt.execute();
+
+
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

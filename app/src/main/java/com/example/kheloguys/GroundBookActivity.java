@@ -4,21 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class GroundBookActivity extends AppCompatActivity {
 
     Intent i;
-    String st_name,st_status,st_price,st_location,st_email,st_phone;
+    String st_name,st_status,st_price,st_location,st_email,st_phone,st_image;
     TextView name,status,price,location,email;
+    ImageView image;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +44,7 @@ public class GroundBookActivity extends AppCompatActivity {
         st_location=i.getStringExtra("location");
         st_email=i.getStringExtra("email");
         st_phone = i.getStringExtra("phone");
+        st_image = i.getStringExtra("imgurl");
 
 
 
@@ -46,6 +59,10 @@ public class GroundBookActivity extends AppCompatActivity {
         price.setText(st_price);
         location.setText(st_location);
         email.setText(st_email);
+
+        image = (ImageView)findViewById(R.id.reactanglea);
+        Log.d("ImageURL",st_image);
+        new ImageLoadTask(st_image, image).execute();
 
 
         location.setOnClickListener(new View.OnClickListener() {
