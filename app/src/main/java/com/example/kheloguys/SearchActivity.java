@@ -2,6 +2,7 @@ package com.example.kheloguys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,7 +32,9 @@ public class SearchActivity extends AppCompatActivity {
 
     ListView listView;
     GroundAdapter groundAdapter;
-    SearchView searchView;
+    SearchView searchView,searchSport;
+    String searchLocation,searchGame;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +42,13 @@ public class SearchActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listview);
         searchView =(SearchView) findViewById(R.id.Search);
+        searchSport=(SearchView) findViewById(R.id.SearchGame);
         Intent in = getIntent();
         String search = in.getStringExtra("search");
-        getDataFromCloud(search);
+        searchLocation="";
+        searchGame=search;
+
+        getDataFromCloud(searchLocation,search);
 
 
 //        arrayList.add(new Ground(R.drawable.img,"PCMC","Open","1000/- Hour"));
@@ -62,7 +69,8 @@ public class SearchActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String s) {
 
                 groundAdapter.getFilter().filter(s);
-                getDataFromCloud(s);
+                searchLocation=s;
+                getDataFromCloud(searchLocation,searchGame);
                 return false;
             }
 
@@ -73,12 +81,29 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        searchSport.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                searchGame = query;
+                getDataFromCloud(searchLocation,searchGame);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
+
+
     }
 
-    void getDataFromCloud(String search)
+    void getDataFromCloud(String search,String game)
     {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://34.145.214.255/searchground.php?search="+search;
+        String url ="http://34.145.214.255/searchground.php?search="+search+"&game="+game;
 //        pg.setVisibility(ProgressBar.VISIBLE);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONArray>() {
@@ -125,6 +150,7 @@ public class SearchActivity extends AppCompatActivity {
             protected Map<String, String> getParams(){
                 Map<String, String> paramV = new HashMap<>();
                 paramV.put("search",search);
+                paramV.put("game",game);
                 return paramV;
             }
         };

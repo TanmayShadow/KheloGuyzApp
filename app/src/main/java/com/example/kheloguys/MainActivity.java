@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("AccountDetails",MODE_PRIVATE);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Intent is used to switch from one activity to another.
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i); // invoke the SecondActivity.
+                finish(); // the current activity will get finished.
+            }
+        }, 2000);
     }
 
     public void sendToLogin()

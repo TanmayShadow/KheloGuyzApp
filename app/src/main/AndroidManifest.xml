@@ -15,6 +15,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".EventPage5"
+            android:exported="false" />
+        <activity
+            android:name=".EventPage4"
+            android:exported="false" />
+        <activity
+            android:name=".EventPage3"
+            android:exported="false" />
+        <activity
+            android:name=".EventPage2"
+            android:exported="false" />
+        <activity
+            android:name=".EventsPage1"
+            android:exported="false" />
+        <activity
             android:name=".EventBookActivity"
             android:exported="false" />
         <activity

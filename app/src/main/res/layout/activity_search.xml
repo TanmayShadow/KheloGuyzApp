@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
-            android:text="Grounds"
+            android:text=""
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -43,13 +43,36 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/Search"
-        android:layout_width="237dp"
+        android:layout_width="200dp"
         android:layout_height="39dp"
-        android:layout_margin="8dp"
-        android:background="@drawable/search_bg"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="5dp"
+        app:iconifiedByDefault="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Location"
+        tools:layout_editor_absoluteY="7dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/Search"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="-7dp"
+        android:text="|"
+        android:textSize="35sp"
+        />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/SearchGame"
+        android:layout_width="200dp"
+        android:layout_height="39dp"
+        android:layout_marginRight="-50dp"
+        android:layout_marginTop="5dp"
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:queryHint="Search here..."
-        tools:layout_editor_absoluteY="7dp" />
+        app:queryHint="Game"
+        tools:layout_editor_absoluteY="7dp"
+        app:searchIcon="@null"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

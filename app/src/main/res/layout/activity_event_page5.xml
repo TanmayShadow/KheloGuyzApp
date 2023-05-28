@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventPage5">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="fill_parent"
+        android:layout_height="220dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/fixture_image"
+
+        />
+
+    <TextView
+        android:layout_width="93dp"
+        android:layout_height="28dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginBottom="-90dp"
+        android:layout_alignBottom="@id/imageView3"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="181dp"
+        android:text="Type"
+        />
+
+
+
+    <Button
+        android:id="@+id/knockout"
+        android:layout_width="293dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:backgroundTint="#B90F0F"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/imageView3"
+        android:gravity="center"
+        android:layout_marginBottom="-150dp"
+        android:text="Knockout"
+        android:textSize="15dp"
+        android:textAppearance="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+
+
+        />
+
+    <Button
+        android:id="@+id/match_with_every_team"
+        android:layout_width="293dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:backgroundTint="#5AA71D"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/imageView3"
+        android:gravity="center"
+        android:layout_marginBottom="-220dp"
+        android:text="Match With Every Team"
+        android:textAppearance="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:textSize="15dp"
+
+        />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="293dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:backgroundTint="#302863"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/imageView3"
+        android:gravity="center"
+        android:layout_marginBottom="-320dp"
+        android:text="Next"
+        android:textAppearance="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:textSize="15dp"
+
+        />
+
+
+
+
+</RelativeLayout>
+
